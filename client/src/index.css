@@ -1,0 +1,40 @@
+@import url("https://fonts.cdnfonts.com/css/salsa");
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sancreek&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Sancreek" !important;
+}
+
+body {
+  background: url("https://raw.githubusercontent.com/RaddyTheBrand/RecipeBlog-MongoDB-Node.js/4d38aabca5c8469bf4d59cfc52d9ed983b40114c/public/img/i-like-food.svg");
+  background-color: lightgray;
+  font-weight: 400;
+  color: #141414;
+}
+
+::-webkit-scrollbar {
+  @apply w-[5px] h-0;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary/10;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-lg;
+}
+
+.mantine-Modal-title {
+  font-size: 16px;
+  @apply text-[#49557e];
+}
+
+.mantine-Table-th {
+  font-size: 16px;
+  font-weight: 600;
+}
