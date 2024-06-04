@@ -31,29 +31,29 @@ function Header() {
 
   const navigate = useNavigate();
 
-  const queryClient = useQueryClient();
-  const { mutate: signout, isPending } = useMutation({
-    mutationFn: async () => {
-      try {
-        const res = await API.post("/auth/signout", {});
+  // const queryClient = useQueryClient();
+  // const { mutate: signout, isPending } = useMutation({
+  //   mutationFn: async () => {
+  //     try {
+  //       const res = await API.post("/auth/signout", {});
 
-        if (res.status === 200) {
-          const data = res.data;
+  //       if (res.status === 200) {
+  //         const data = res.data;
 
-          queryClient.invalidateQueries({ queryKey: ["authUser"] });
-          return data;
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    onSuccess: (data) => {
-      if (data) {
-        window.location.reload();
-        navigate("/");
-      }
-    },
-  });
+  //         queryClient.invalidateQueries({ queryKey: ["authUser"] });
+  //         return data;
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   },
+  //   onSuccess: (data) => {
+  //     if (data) {
+  //       window.location.reload();
+  //       navigate("/");
+  //     }
+  //   },
+  // });
 
   return (
     <header className="shadow-md">
@@ -76,15 +76,7 @@ function Header() {
               Cart (<span className="w-2">{cart.length}</span>)
             </Link>
           </li>
-          {user ? (
-            <li
-              className="cursor-pointer text-blue-500"
-              onClick={signout}
-              aria-disabled={isPending}
-            >
-              Sign out
-            </li>
-          ) : (
+          {!user && (
             <li
               className="cursor-pointer text-blue-500"
               onClick={() => setSignin(true)}
