@@ -10,7 +10,7 @@ export const placeOrder = async (req, res) => {
   const { items, amount } = req.body;
   const userId = req.user._id;
 
-  const frontend_url = "http://localhost:8000";
+  const frontend_url = "https://hippoxpress.onrender.com";
 
   try {
     const line_items = req.body.items.map((item) => ({

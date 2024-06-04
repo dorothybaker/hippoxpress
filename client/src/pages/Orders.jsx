@@ -29,7 +29,7 @@ function Orders() {
           <div className="min-h-[300px] flex items-center justify-center text-center text-2xl text-gray-400 w-full lg:col-span-3 sm:col-span-2 col-span-1">
             Loading your orders...
           </div>
-        ) : data.length > 0 ? (
+        ) : data?.length > 0 ? (
           data?.map((order) => (
             <div
               key={order._id}

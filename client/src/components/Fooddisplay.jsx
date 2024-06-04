@@ -33,10 +33,10 @@ function Fooddisplay({ category }) {
               </div>
             ))
           : category === "All"
-          ? food_list.map((food) => <Card food={food} key={food._id} />)
+          ? food_list?.map((food) => <Card food={food} key={food._id} />)
           : food_list
-              .filter((food) => food.category === category)
-              .map((food) => <Card food={food} key={food._id} />)}
+              ?.filter((food) => food.category === category)
+              ?.map((food) => <Card food={food} key={food._id} />)}
       </div>
     </section>
   );
