@@ -64,10 +64,12 @@ function Header() {
         <ul className="flex items-center sm:gap-4 gap-3  text-[#49557e] whitespace-nowrap">
           <li className="cursor-pointer md:block hidden">Home</li>
           <li className="cursor-pointer md:block hidden">Our Menu</li>
-          {user && (
+          {user ? (
             <li className="cursor-pointer" onClick={() => navigate("/orders")}>
               Orders
             </li>
+          ) : (
+            <li className="cursor-pointer sm:block hidden">Contact us</li>
           )}
           <li className="cursor-pointer">
             <Link to="/cart">
